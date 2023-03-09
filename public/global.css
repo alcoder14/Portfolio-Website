@@ -1,0 +1,63 @@
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+*{
+	font-family: 'Lexend', sans-serif;
+}
+html, body{
+	height: 100%;
+}
+
+
+button{
+	outline: none;
+	border: none;
+}
+
+.title{
+	font-size: 70px;
+	color: #75A4E1;
+	margin-bottom: 100px;
+	line-height: 0.0;
+}
+
+.section-padding{
+	padding: 80px 100px 80px 100px;
+}
+
+p::selection{
+	color: #14335C;
+	background-color: #75a4e1;
+}
+
+@media(max-width: 1500px){
+	.title{
+		margin-bottom: 75px;
+		font-size: 60px;
+	}
+}
+
+@media(max-width: 1250px){
+	.section-padding{
+		padding: 60px;
+	}
+	.title{
+		font-size: 50px;
+	}
+}
+@media(max-width: 550px){
+	.section-padding{
+		padding: 30px;
+	}
+	.title{
+		font-size: 50px;
+	}
+}
+@media(max-width: 450px){
+	.section-padding{
+		padding: 25px;
+	}
+}
