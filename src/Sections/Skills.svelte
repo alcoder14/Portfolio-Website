@@ -4,14 +4,13 @@
 
     const skills = [
         {name: "HTML", logo: "html.png", percentage: 90},
-
         {name: "CSS", logo: "css.png", percentage: 70},
         {name: "JavaScript", logo: "js.png", percentage: 60},
         {name: "Svelte", logo: "svelte.png", percentage: 70},
         {name: "Figma", logo: "figma.png", percentage: 70},
-        {name: "Python", logo: "py.png", percentage: 50},
+        {name: "Vue", logo: "vue.png", percentage: 30},
         {name: "Sass", logo: "sass.png", percentage: 70},
-        {name: "Flask", logo: "flask.png", percentage: 70},
+        {name: "Express", logo: "node.png", percentage: 40},
     ]
 </script>
 
@@ -23,7 +22,7 @@
         {/each}
     </div>
 
-    <p class="message">I also have some experience with PHP, SQL and Vue, but they are not part of my main stack.</p>
+    <p class="message">I also have some experience with PHP and SQL but they are not part of my main stack.</p>
 </section>
 
 <style>

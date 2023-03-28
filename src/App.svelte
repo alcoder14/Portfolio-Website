@@ -11,20 +11,8 @@
 	import BurgerMenu from "./Components/BurgerMenu.svelte";
 	import MobileNavbar from "./Components/MobileNavbar.svelte";
     import { get } from "svelte/store";
-	import MobileNavbar2 from "./Components/MobileNavbar2.svelte";
 
 	// Functionality 
-
-
-	const scrollTo = (e) =>{
-		let target = e.detail.target
-		console.log(target)
-		const elem = document.querySelector(target.getAttribute("href"));
-        elem.scrollIntoView({
-            behavior: "smooth"
-        })
-		mobileNavbarVisible = false
-	}
 
 	const scrollToTop=() =>{
 		const elem = document.querySelector("#header-section")
@@ -61,11 +49,37 @@
 	}
 	get_browser_width()
 
+
+
+
+	// SCROLL TO CHOSEN SECTION - WAIT 1 SECOND FOR CLOSING ANIMATION TO COMPLETE 
+	const scrollTo = (e) =>{
+		let target = e.detail.target
+		const elem = document.querySelector(target.getAttribute("href"));
+        elem.scrollIntoView({
+            behavior: "smooth"
+        })
+
+		setTimeout(() => {
+			mobileNavbarVisible = false
+		}, 1000);
+	}
+
+	// TOGGLE MOBILE NAVBAR - WAIT 1 SECOND FOR CLOSING ANIMATION TO COMPLETE IN MobileNavbar COMPONENT
 	let mobileNavbarVisible = false
 	const toggle_mobile_navbar = () =>{
-		mobileNavbarVisible = !mobileNavbarVisible
-		console.log(mobileNavbarVisible)
+
+		if(mobileNavbarVisible){
+			setTimeout(() => {
+				mobileNavbarVisible = false
+			}, 1000);
+		} else {
+			mobileNavbarVisible = true
+		}
 	}
+
+
+
 </script>
 
 <svelte:window on:scroll={get_scroll_Y} on:resize={get_browser_width} />

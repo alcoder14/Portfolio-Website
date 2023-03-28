@@ -1,32 +1,47 @@
 <script>
-    import BurgerMenu from "./BurgerMenu.svelte";
     import { createEventDispatcher } from "svelte";
 
     let dispatch = createEventDispatcher()
     let show_close_btn = true
 
-    let close_animate = false
+    let navbar_closing = false
+    let navbar_opening = true
+
+    const animate_close = () =>{
+        navbar_opening = false
+        navbar_closing = true
+    }
+
     const dispatch_close = () =>{
-        //close_animate = true
+
+        animate_close()
         dispatch("close")
+        setTimeout(() => {
+            navbar_closing = false
+            navbar_opening = true
+        }, 1000);
     }
 
     const dispatch_scroll = ({target}) =>{
-        //close_animate = true
+
+        animate_close()
         target = target.parentElement
         dispatch("scrollIntoView", {
             target: target
-        })   
-
+        })
+        setTimeout(() => {
+            navbar_closing = false
+            navbar_opening = true
+        }, 1000);  
     }
 
 </script>
 
 <div class="navbar-container">
-    <div class="navbar-window">
+    <div class="navbar-window" class:opening={navbar_opening} class:closing={navbar_closing}>
         
         <div class="close-container">
-            <BurgerMenu on:click={dispatch_close} {show_close_btn} />
+            <button on:click={dispatch_close} class="close-button" ><i class="fa-solid fa-xmark"></i></button>
         </div>
 
         <div class="nav-buttons-container">
@@ -40,6 +55,9 @@
 </div>
 
 <style>
+
+    /* CONTAINER + WINDOW */
+
     .navbar-container{
         width: 100%;
         height: 100%;
@@ -56,29 +74,68 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        animation-name: slide-in-navbar;
+    }
+
+
+    /* ANIMATION */
+
+    .opening, .closing{
         animation-duration: 1s;
+    }
+    .opening{
+        animation-name: slide-in-navbar;
+    }
+    .closing{
+        animation-name: slide-out-navbar;
     }
     @keyframes slide-in-navbar{
         0%{transform: translateX(100%);}
         100%{transform: translateX(0);}
     }
-    /*
-    .modal_visible{
-        animation-name: slide-out-navbar;
-        animation-duration: 1s;
-    }
     @keyframes slide-out-navbar{
         0%{transform: translateX(0);}
         100%{transform: translateX(100%);}
     }
-    */
+  
+    /* ELEMENTS */
 
     .close-container{
         width: 100%;
         height: 100px;
         position: absolute;
     }
+
+    .close-button{
+        z-index: 10;
+        position: fixed;
+        top: 40px;
+        right: 40px;
+        background-color: #191919;
+        height: 58px;
+        width: 54px;
+        transition: all 0.2s;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    
+    .close-button:hover{
+        cursor: pointer;
+        background-color: #6caafa;
+    }
+    .fa-xmark{
+        font-size: 40px;
+        color: white;
+    }
+    @media(max-width: 550px){
+        .close-button{
+            top: 18px;
+            right: 18px;
+        }
+    }
+
+
     .nav-buttons-container{
         width: 100%;
         position: absolute;

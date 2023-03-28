@@ -5,7 +5,7 @@
 <footer>
     <div class="social-media">
         <a href="#1"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="#2"><i class="fa-brands fa-github"></i></a>
+        <a href="https://github.com/alcoder14"><i class="fa-brands fa-github"></i></a>
     </div>
     <h2 class="made-with">Made with Svelte</h2>
     <h4><span>&copy;</span> {year} Aljaž Lončarič.</h4>

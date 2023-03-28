@@ -8,9 +8,9 @@
     ]
 
     const projects = [
-        {name: "Weather App", icon: "fa-cloud", link: "https://www.aldevportfolio.com/WeatherApp", github: "#", description: descriptions[0]},
-        {name: "Calculator App", icon: "fa-calculator", link: "https://www.aldevportfolio.com/Calculator", github: "#", description: descriptions[1]},
-        {name: "To Do App", icon: "fa-list", link: "https://www.aldevportfolio.com/ToDoApp", github: "#", description: descriptions[2]},
+        {name: "Weather App", icon: "fa-cloud", link: "https://comforting-caramel-2e3d4f.netlify.app", github: "#", description: descriptions[0]},
+        {name: "Calculator App", icon: "fa-calculator", link: "https://illustrious-ganache-244505.netlify.app", github: "#", description: descriptions[1]},
+        {name: "To Do App", icon: "fa-list", link: "https://celebrated-halva-3e08a8.netlify.app", github: "#", description: descriptions[2]},
     ]
 </script>
 
