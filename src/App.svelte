@@ -97,7 +97,7 @@
 {/if}
 
 <Header on:scrollIntoView={scrollTo} />
-<AboutMe />
+<AboutMe bgColor={"brighter"} />
 <Skills />
 <Projects on:showModal={assign_data} />
 <Contact />

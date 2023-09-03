@@ -2,7 +2,6 @@
     import { fade } from "svelte/transition";
     import { scale } from "svelte/transition";
 
-    console.log("here")
 </script>
 
 

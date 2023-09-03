@@ -1,6 +1,7 @@
 <script>
 
     import { createEventDispatcher } from "svelte";
+    import { each } from "svelte/internal";
     let dispatch = createEventDispatcher()
     
     export let data
@@ -19,9 +20,11 @@
     <h3 class="project-title">{data.name}</h3>
 
     <div class="links">
-        <a href={data.link}><i class="fa-solid fa-up-right-from-square"></i></a>
+        <a href={data.link} target="_blank" rel="noreferrer"><i class="fa-solid fa-up-right-from-square"></i></a>
         <button on:click={showModal}><i class="fa-solid fa-circle-info"></i></button>
-        <a href={data.github}><i class="fa-brands fa-github"></i></a>
+        {#if data.github !== ""}
+            <a href={data.github} target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i></a>
+        {/if}
     </div>
 </div>
 
@@ -36,6 +39,7 @@
         padding: 30px;
         border-bottom: solid 3px #6caafa;
         transition: all 0.4s;
+        margin-bottom: 50px;
     }
     .project-icon{
         font-size: 160px;
@@ -45,6 +49,7 @@
         font-size: 40px;
         color: white;
         margin: 20px;
+        text-align: center;
     }
     .links{
         width: 100%;

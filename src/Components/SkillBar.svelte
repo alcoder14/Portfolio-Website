@@ -35,6 +35,7 @@
 
 <style>
     .skill-container{
+        width: 100%;
         display: grid;
         grid-template-columns: 20% 80%;
         margin: 30px 0;
@@ -51,7 +52,6 @@
         font-size: 30px;
         color: white;
     }
-
     .skill-bar{
         height: 50px;
         width: 100%;

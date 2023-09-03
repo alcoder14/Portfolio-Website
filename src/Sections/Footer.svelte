@@ -39,4 +39,12 @@
         margin: 0;
         margin-bottom: 20px;
     }
+    @media(max-width: 600px){
+        a, i{
+            font-size: 35px;
+        }
+        .made-with, h4{
+            font-size: 24px;
+        }
+    }
 </style>

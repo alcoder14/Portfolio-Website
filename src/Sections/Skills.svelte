@@ -14,43 +14,40 @@
     ]
 </script>
 
-<section class="skills section-padding" id="skills-section">
-    
-    <div class="skills-show">
+<section class="section darker" id="skills-section">
+    <div class="max-width-1900 skills-show">
         {#each skills as skill}
             <SkillBar {skill} />
         {/each}
     </div>
-
     <p class="message">I also have some experience with PHP and SQL but they are not part of my main stack.</p>
 </section>
 
 <style>
-    .skills{
-        background-color: #191919;
-    }
     .skills-show{
         display: grid;
-        grid-template-columns: 42% 42%;
+        grid-template-columns: 40% 40%;
+        gap: 4%;
         justify-content: center;
-        margin-bottom: 50px;
+        height: 800px;
     }
     .message{
         font-size: 30px;
         color: white;
         text-align: center;
+        margin: 0 auto;
+        padding: 30px;
     }
     @media(max-width: 1700px){
-        .skills-show{
-            grid-template-columns: 50% 50%;
-        }
         .message{
             font-size: 28px;
         }
     }
-    @media(max-width: 850px){
+    @media(max-width: 1050px){
         .skills-show{
-            grid-template-columns: 100%;
+            grid-template-columns: 92%;
+            height: 1300px;
+            gap: 1%;
         }
         .message{
             font-size: 22px;

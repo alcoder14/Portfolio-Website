@@ -21,8 +21,8 @@
     }
 </script>
 
-<section class="contact section-padding" id="contact-section">
-    <form class="contact-form" on:submit|preventDefault={sendMail}>
+<section class="section darker" id="contact-section">
+    <form class="max-width-1900 contact-form" on:submit|preventDefault={sendMail}>
         <input type="text" placeholder="First Name" required bind:value={fname}>
         <input type="text" placeholder="Last Name" required bind:value={lname}>
         <input type="email" placeholder="Email Address" required bind:value={email}>
@@ -33,10 +33,7 @@
 </section>
 
 <style>
-    .contact{
-        background-color: #292929;
-        height: fit-content;
-    }
+
     .contact-form{
         display: grid;
         grid-template-columns: 42% 42%;
@@ -50,11 +47,11 @@
         grid-column-start: 2;
     }
     input, textarea{
-        font-size: 40px;
+        font-size: 30px;
         padding: 12px 24px;
         outline: none;
         border: none;
-        background-color: #191919;
+        background-color: #292929;
         color: white;
         border-bottom: 3px solid #6caafa;
     }
