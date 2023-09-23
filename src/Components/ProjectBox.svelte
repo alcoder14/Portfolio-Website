@@ -39,7 +39,6 @@
         padding: 30px;
         border-bottom: solid 3px #6caafa;
         transition: all 0.4s;
-        margin-bottom: 50px;
     }
     .project-icon{
         font-size: 160px;
@@ -115,11 +114,14 @@
             font-size: 34px;
         }
     }
-
+    @media(max-width: 1300px){
+        .box{
+            margin-bottom: 50px;
+        }
+    }
     @media(max-width: 1100px){
         .box{
             flex-basis: 60%;
-            margin-bottom: 40px;
         }
         .links{
             width: 75%;

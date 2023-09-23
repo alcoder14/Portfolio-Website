@@ -1,39 +1,47 @@
 <script>
-    let fname = "", lname = "", email = "", subject = "", message = ""
+    import emailjs from '@emailjs/browser';
 
-    const sendMail = async () =>{
-        const response = await fetch("http://localhost:3000/send-email", {
-            method: "POST",
-            headers: {
-                'Content-Type': "application/json"
-            }, 
-            body: JSON.stringify({fname, lname, subject, email, message})
-        })
-
-        let response_text = await response.text()
-        fname = ""
-        lname = ""
-        email= ""
-        subject = ""
-        message = ""
-
-        window.alert(response_text)
+    let userName = '';
+    let userEmail = '';
+    let message = '';
+  
+    const sendEmail =  (e) => {
+      console.log(e.target)  
+      emailjs.sendForm('service_cnn2tl8', 'template_ouzv9jf', e.target, 'WDgsa08SvMnKaw68H')
+        .then((result) => {
+            console.log('SUCCESS!', result.text);
+            window.alert("Email sent successfully!")
+            clearInputs()
+        }, (error) => {
+            console.log('FAILED...', error.text);
+            console.log("There was a problem sending email")
+            clearInputs()
+        });
     }
-</script>
 
-<section class="section darker" id="contact-section">
-    <form class="max-width-1900 contact-form" on:submit|preventDefault={sendMail}>
-        <input type="text" placeholder="First Name" required bind:value={fname}>
-        <input type="text" placeholder="Last Name" required bind:value={lname}>
-        <input type="email" placeholder="Email Address" required bind:value={email}>
-        <input type="text" placeholder="Subject" required bind:value={subject}>
-        <textarea class="message" placeholder="Message" required bind:value={message}></textarea>
-        <button type="submit">Submit</button>
+  const clearInputs = () => {
+    userName = '';
+    userEmail = '';
+    message = '';
+  };
+  </script>
+
+<section class="contact section-padding" id="contact-section">
+    <form on:submit|preventDefault={sendEmail} class="contact-form">
+      <input type="text" name="user_name" placeholder="Name" bind:value={userName}>
+      <input type="email" name="user_email" placeholder="Email" bind:value={userEmail}>
+      <textarea name="message" placeholder="Message" class="message" bind:value={message}></textarea>
+      <button type="submit">Send</button>
     </form>
-</section>
+  </section>
+  
 
 <style>
-
+    .contact{
+        background-color: #292929;
+        height: fit-content;
+        padding: 50px;
+    }
     .contact-form{
         display: grid;
         grid-template-columns: 42% 42%;
@@ -47,20 +55,22 @@
         grid-column-start: 2;
     }
     input, textarea{
-        font-size: 30px;
+        font-size: 40px;
         padding: 12px 24px;
         outline: none;
         border: none;
-        background-color: #292929;
+        background-color: #191919;
         color: white;
         border-bottom: 3px solid #6caafa;
     }
     textarea{
         resize: vertical;
     }
+    
     button{
         background-color: #6caafa;
         color: #14335C;
+        padding: 10px;
         font-size: 28px;
         cursor: pointer;
         border-radius: 0;
@@ -76,6 +86,7 @@
     button:active{
         transform: translate(0.9s);
     }
+    
 
     input::placeholder, textarea::placeholder{
         color: white;

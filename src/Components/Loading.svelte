@@ -8,7 +8,6 @@
 
     let interval = setInterval(() => {
         progress += Math.floor(Math.random() * 15)
-        console.log(progress)
 
         if((100 - progress) < 20){
             progress += 100 - progress

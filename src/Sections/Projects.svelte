@@ -5,14 +5,12 @@
     let descriptions = {
         weatherApp: "This is a simple front end application which uses VisualCrossing weather API to fetch weather data in JSON format based on location provided by user. Visual presentation of the data was done using SvelteJS framework. Up to 6 search queries for locations at time are saved to local storage.",
         calculatorApp: "A calculator UI application built using SvelteJS. It provides a set of basic mathematical operations to be used for calculations. Every calculation and its result is saved to local storage and displayed in memory section.",
-        toDoApp: "Another front-end app built with SvelteJS. It allows users to plan simple events.",
         recipeApp: "This app allows you to search, read and save recipes from many different cuisines. It provides information about ingredients, instructions and details. Built using VueJS."
     }
 
     const projects = [
         {name: "Weather App", icon: "fa-cloud", link: "https://weather-app-two-navy.vercel.app/", github: "https://github.com/alcoder14/Weather-App", description: descriptions.weatherApp},
         {name: "Calculator App", icon: "fa-calculator", link: "https://illustrious-ganache-244505.netlify.app", github: "", description: descriptions.calculatorApp},
-        {name: "To Do App", icon: "fa-list", link: "https://celebrated-halva-3e08a8.netlify.app", github: "", description: descriptions.toDoApp},
         {name: "Recipe App", icon: "fa-bowl-food", link: "https://recipe-app-rose-ten.vercel.app/#/", github: "https://github.com/alcoder14/Recipe-App", description: descriptions.recipeApp}
     ]
 </script>
