@@ -46,8 +46,8 @@
     @media(max-width: 1050px){
         .skills-show{
             grid-template-columns: 92%;
-            height: 1300px;
-            gap: 1%;
+            height: 1100px;
+            gap: 0;
         }
         .message{
             font-size: 22px;

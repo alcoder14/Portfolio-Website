@@ -123,13 +123,16 @@
     }
     @media(max-width: 950px){
         input, textarea{
-            font-size: 24px;
-            padding: 9px 18px;
+            font-size: 20px;
+            padding: 5px 12px;
             margin: 10px 0;
         }
         textarea{
             margin-bottom: 20px;
             height: 200px;
+        }
+        button{
+            font-size: 20px;
         }
         .contact-form{
             display: flex;

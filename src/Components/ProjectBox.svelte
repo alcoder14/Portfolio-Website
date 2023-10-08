@@ -122,16 +122,20 @@
     @media(max-width: 1100px){
         .box{
             flex-basis: 60%;
+            padding: 15px;
+        }
+        .box:nth-child(3){
+            margin-bottom: 0;
         }
         .links{
             width: 75%;
             border-radius: 30px;
         }
         .project-icon{
-            font-size: 150px;
+            font-size: 100px;
         }
         .project-title{
-            font-size: 36px;
+            font-size: 24px;
         }
         a, i{
             font-size: 41px;

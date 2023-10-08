@@ -26,8 +26,10 @@
 </script>
 
 <div class="skill-container">
-    <img src="Images/{skill.logo}" alt="Logo" class="skill-logo">
-    <h3 class="skill-title">{skill.name}</h3>
+    <div class="language-data-container">
+        <img src="Images/{skill.logo}" alt="Logo" class="skill-logo">
+        <h3 class="skill-title">{skill.name}</h3>
+    </div>
     <div class="skill-bar">
         <div class="skill-percentage" style={`width: ${progress}%`} use:viewport on:enterViewport={animate} on:exitViewport={resetProgress}></div>
     </div>
@@ -36,20 +38,27 @@
 <style>
     .skill-container{
         width: 100%;
-        display: grid;
-        grid-template-columns: 20% 80%;
-        margin: 30px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0;
+    }
+    .language-data-container{
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-content: center;
+        padding-bottom: 10px;
     }
     .skill-logo{
-        grid-row: 1 / span 2;
-        height: 100px;
+        height: 50px;
         width: auto;
-        justify-self: center;
+        margin-right: 20px;
         align-self: center;
     }
     .skill-title{
         line-height: 0;
-        font-size: 30px;
+        font-size: 40px;
         color: white;
     }
     .skill-bar{
@@ -66,57 +75,45 @@
         border-radius: inherit;
     }
     @media(max-width: 1700px){
-        .skill-logo{
-            height: 80px;
-        }
         .skill-bar{
             height: 40px;
         }
         .skill-container{
             margin: 20px 60px 20px 0;
         }
+        .skill-logo{
+            font-size: 35px;
+        }
         .skill-title{
             font-size: 25px;
         }
     }
     @media(max-width: 1200px){
-        .skill-logo{
-            height: 60px;
-        }
         .skill-bar{
             height: 30px;
         }
         .skill-container{
             margin: 20px 60px 20px 0;
         }
-        .skill-title{
-            font-size: 22px;
-        }
     }
     @media(max-width: 850px){
         .skill-logo{
-            height: 60px;
+            height: 30px;
         }
         .skill-bar{
             height: 30px;
         }
         .skill-container{
-            margin: 20px 20px 20px 0;
+            margin: 0;
             grid-template-columns: auto 80%;
-        }
-        .skill-title{
-            font-size: 22px;
         }
     }
     @media(max-width: 550px){
-        .skill-logo{
-            height: 50px;
-        }
         .skill-bar{
             height: 25px;
         }
         .skill-container{
-            margin: 20px 20px 20px 0;
+            margin: 0;
             grid-template-columns: auto 80%;
         }
         .skill-title{
